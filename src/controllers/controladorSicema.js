@@ -137,11 +137,12 @@ let peliculas = [
 
 //
 let fila = document.getElementById("fila")
-/* mediante la palabra recervada document pongouso el metodo getElmentByID le digo a una etiqueta que se guarde en una variable
+/* mediante la palabra recervada document pongo en uso el metodo getElmentByID le digo a una etiqueta que se guarde en una variable
  * javascript me lleva al documento y busca la etiqueta que yo ingrese como parametro en en metodo getElementById*/
 
 
  peliculas.forEach(function(pelicula){
+    /* este roeech se repitira durante el numero de elementos que tenga mi arreglo de peliculas*/
     //[console.log(pelicula)]
     console.log(pelicula.nombre)
     console.log(pelicula.genero)
@@ -151,5 +152,16 @@ let fila = document.getElementById("fila")
     console.log(pelicula.idioma)
 
     //TRAVERSING (CREAR ETIQUETAS DE HTML DESDE JAVASCRIPT)
-    let poster
+    let poster = document.createElement("img")
+    poster.src = pelicula.poster /* que en la etiqueta imagen que acabamos de crear me agregue la imagen que esta en pelicula.poster(la ruta de la imagen)*/
+
+    let nombrePelicula = document.createElement("h3")
+    nombrePelicula.textContent= pelicula.nombre
+    //PADRES E HIJOS
+    fila.appendChild(poster)
+    /* en la fila 139 se trajo el id fila que pertenece a un div en el html
+     * y en esta instruccion se le agrega el poster que tiene la imagen*/
+    fila.appendChild(nombrePelicula)
+    
+    
  })
