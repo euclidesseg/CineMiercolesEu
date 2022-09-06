@@ -136,6 +136,11 @@ let peliculas = [
 //recorriendo un arreglo en javascript
 
 //
+let fila = document.getElementById("fila")
+/* mediante la palabra recervada document pongouso el metodo getElmentByID le digo a una etiqueta que se guarde en una variable
+ * javascript me lleva al documento y busca la etiqueta que yo ingrese como parametro en en metodo getElementById*/
+
+
  peliculas.forEach(function(pelicula){
     //[console.log(pelicula)]
     console.log(pelicula.nombre)
@@ -144,4 +149,7 @@ let peliculas = [
     console.log(pelicula.sinopcis)
     console.log(pelicula.clasificacion)
     console.log(pelicula.idioma)
+
+    //TRAVERSING (CREAR ETIQUETAS DE HTML DESDE JAVASCRIPT)
+    let poster
  })
