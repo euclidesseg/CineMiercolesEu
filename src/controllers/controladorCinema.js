@@ -39,7 +39,7 @@ console.log(persona.comida.precio)*/
 
 let peliculas = [
     {
-        nombre: "bestia",
+        nombre: "Bestia",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/bestia.jpg?alt=media&token=aa35a1f4-ad96-46dd-9ddd-17ae4ff77ed4",
@@ -49,7 +49,7 @@ let peliculas = [
 
     },
     {
-        nombre: "demonio",
+        nombre: "Demonio",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/demonio.jpg?alt=media&token=8d61f673-9719-4d60-a49c-3d1facecc089",
@@ -59,7 +59,7 @@ let peliculas = [
 
     },
     {
-        nombre: "dragon ball",
+        nombre: "Dragon ball",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/dragon.jpg?alt=media&token=24334645-ef96-4188-97a1-848690755f81",
@@ -69,7 +69,7 @@ let peliculas = [
 
     },
     {
-        nombre: "el perro samurai",
+        nombre: "El perro samurai",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/el%20perro%20samurai.png?alt=media&token=959cdd08-a5ac-46ed-91db-16c4ec63462f",
@@ -79,7 +79,7 @@ let peliculas = [
 
     },
     {
-        nombre: "gemelo siniestro",
+        nombre: "Gemelo siniestro",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/gemelo%20siniestro.png?alt=media&token=39be4c0e-3a52-43e0-b36a-2773a0b05179",
@@ -88,7 +88,7 @@ let peliculas = [
         idioma: "ES",
     },
     {
-        nombre: "telefono negro",
+        nombre: "Telefono negro",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/telefono%20negro.png?alt=media&token=3b607710-71a0-4abf-beb0-64f5f1a06f0e",
@@ -97,7 +97,7 @@ let peliculas = [
         idioma: "ES",
     },
     {
-        nombre: "minions",
+        nombre: "Minions",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/minions.jpg?alt=media&token=e0a03884-e6f2-4abd-b608-f2bd7ff928b5",
@@ -106,7 +106,7 @@ let peliculas = [
         idioma: "ES",
     },
     {
-        nombre: "vertigo",
+        nombre: "Vertigo",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/vertigo.png?alt=media&token=00ad5995-11a1-4d08-ada6-560518045d2b",
@@ -115,7 +115,7 @@ let peliculas = [
         idioma: "ES",
     },
     {
-        nombre: "zomvie",
+        nombre: "Zomvie",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/zombie.png?alt=media&token=411487d2-a2dc-4af2-ab19-36938e3b614d",
@@ -123,7 +123,7 @@ let peliculas = [
         idioma: "ES",
     },
     {
-        nombre: "supermascotas",
+        nombre: "Supermascotas",
         genero: "siencia ficcion",
         duracion: 220,
         poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/supermascotas.jpg?alt=media&token=b14419fc-b458-40b8-be75-fc18085b98ee",
@@ -164,21 +164,41 @@ let fila = document.getElementById("fila")
     // fila.appendChild(nombrePelicula)
     
     /* RENDERIZAR CREAR INTERFAZ GRAFICA DESDE LA LOGICA*/
+
     //1. creamos una columna para cada pelicula
-    let columna = document.createElement("div");
-    columna.classList.add("col");/* entre las comillas se agrega el nombre de los  estilos de las clases que se quiera a gregar*/
-    //2.creamos una targeta para cada pelicula
-    let targeta = document.createElement("div");
-    targeta.classList.add("card","h-100");
-    //3. creamos una foto para cada pelicula 
-    let poster = document.createElement("img");
-    poster.src = pelicula.poster;//se pone pelicula porque hace referencia al nombre de la funcion en el fo y no al nombre del vector
+        let columna = document.createElement("div");
+        columna.classList.add("col");/* entre las comillas se agrega el nombre de los  estilos de las clases que se quiera a gregar*/
     
+    //2.creamos una targeta para cada pelicula
+        let targeta = document.createElement("div");
+        targeta.classList.add("card","h-100");
+    
+    //3. creamos una foto para cada pelicula 
+        let poster = document.createElement("img");
+        poster.src = pelicula.poster;//se pone pelicula porque hace referencia al nombre de la funcion en el fo y no al nombre del vector
+    
+    //4. creamos los nombres de la peliculas
+        let nombrePelicula = document.createElement("div");/* el div donde ira el nombre 
+                                                            * y la sinopcis de la pelicula*/
+        nombrePelicula.classList.add("card-body");/* la clase del div*/
+
+        let titulo = document.createElement("h1");
+        titulo.classList.add('card-title');
+        titulo.textContent = pelicula.nombre;
+
+    //5. Agregamos la sinopcis de la pelicula
+        let sinopcis = document.createElement("p")
+        sinopcis.classList.add("card-text");
+        sinopcis.textContent = pelicula.sinopcis;
     // empezamos ingresar hijos desde el mas itnerno
     // la targeta tiene un hijo que se el poster
     targeta.appendChild(poster);
+    targeta.appendChild(nombrePelicula);
     // la columna tiene un hijo que sera la targeta
     columna.appendChild(targeta);
-    // el div el cual lammamos a javascript mediante el id fila tendra un hijo y sera la columna
+    // el div el cual llammamos a javascript mediante el id fila tendra un hijo y sera la columna
     fila.appendChild(columna);
+
+    nombrePelicula.appendChild(titulo);
+    nombrePelicula.appendChild(sinopcis);
  })

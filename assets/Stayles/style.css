@@ -8,3 +8,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.card-title{
+    color: rgb(37, 23, 168);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+.card-text{
+    font-family: 'Oswald', sans-serif;
+}
