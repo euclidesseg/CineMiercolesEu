@@ -137,7 +137,7 @@ let peliculas = [
 
 //
 let fila = document.getElementById("fila")
-/* mediante la palabra recervada document pongo en uso el metodo getElmentByID le digo a una etiqueta que se guarde en una variable
+/* mediante la palabra recervada document pongo en uso el metodo getElmentByID el cual le dice a una etiqueta que se guarde en una variable
  * javascript me lleva al documento y busca la etiqueta que yo ingrese como parametro en en metodo getElementById*/
 
 
@@ -152,16 +152,33 @@ let fila = document.getElementById("fila")
     console.log(pelicula.idioma)
 
     //TRAVERSING (CREAR ETIQUETAS DE HTML DESDE JAVASCRIPT)
-    let poster = document.createElement("img")
-    poster.src = pelicula.poster /* que en la etiqueta imagen que acabamos de crear me agregue la imagen que esta en pelicula.poster(la ruta de la imagen)*/
+    // let poster = document.createElement("img")
+    // poster.src = pelicula.poster /* que en la etiqueta imagen que acabamos de crear me agregue la imagen que esta en pelicula.poster(la ruta de la imagen)*/
 
-    let nombrePelicula = document.createElement("h3")
-    nombrePelicula.textContent= pelicula.nombre
+    // let nombrePelicula = document.createElement("h3")
+    // nombrePelicula.textContent= pelicula.nombre
     //PADRES E HIJOS
-    fila.appendChild(poster)
+    // fila.appendChild(poster)
     /* en la fila 139 se trajo el id fila que pertenece a un div en el html
      * y en esta instruccion se le agrega el poster que tiene la imagen*/
-    fila.appendChild(nombrePelicula)
+    // fila.appendChild(nombrePelicula)
     
+    /* RENDERIZAR CREAR INTERFAZ GRAFICA DESDE LA LOGICA*/
+    //1. creamos una columna para cada pelicula
+    let columna = document.createElement("div");
+    columna.classList.add("col");/* entre las comillas se agrega el nombre de los  estilos de las clases que se quiera a gregar*/
+    //2.creamos una targeta para cada pelicula
+    let targeta = document.createElement("div");
+    targeta.classList.add("card","h-100");
+    //3. creamos una foto para cada pelicula 
+    let poster = document.createElement("img");
+    poster.src = pelicula.poster;//se pone pelicula porque hace referencia al nombre de la funcion en el fo y no al nombre del vector
     
+    // empezamos ingresar hijos desde el mas itnerno
+    // la targeta tiene un hijo que se el poster
+    targeta.appendChild(poster);
+    // la columna tiene un hijo que sera la targeta
+    columna.appendChild(targeta);
+    // el div el cual lammamos a javascript mediante el id fila tendra un hijo y sera la columna
+    fila.appendChild(columna);
  })
