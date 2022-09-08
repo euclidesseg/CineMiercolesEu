@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap');
+
 .banner{
     background: url("../images/banner1.jpg");
     padding: 10%;
@@ -8,6 +11,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.card{
+    position: relative;
+}
 .card-title{
     color: rgb(37, 23, 168);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -15,4 +21,16 @@
 }
 .card-text{
     font-family: 'Oswald', sans-serif;
+ 
+}
+.card-clasificacion, .card-genero , .card-duracion, .card-idioma{
+    font-family: 'Cairo', sans-serif;
+    color: rgb(57, 44, 68);
+}
+.container_proximo{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

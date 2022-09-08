@@ -178,27 +178,143 @@ let fila = document.getElementById("fila")
         poster.src = pelicula.poster;//se pone pelicula porque hace referencia al nombre de la funcion en el fo y no al nombre del vector
     
     //4. creamos los nombres de la peliculas
-        let nombrePelicula = document.createElement("div");/* el div donde ira el nombre 
+        let datosPelicula = document.createElement("div");/* el div donde ira el nombre 
                                                             * y la sinopcis de la pelicula*/
-        nombrePelicula.classList.add("card-body");/* la clase del div*/
+        datosPelicula.classList.add("card-body");/* la clase del div*/
 
         let titulo = document.createElement("h1");
         titulo.classList.add('card-title');
         titulo.textContent = pelicula.nombre;
 
     //5. Agregamos la sinopcis de la pelicula
-        let sinopcis = document.createElement("p")
+        let sinopcis = document.createElement("p");
         sinopcis.classList.add("card-text");
         sinopcis.textContent = pelicula.sinopcis;
+
+    //6. agregamos la clasificacion
+        let clasificacion = document.createElement("h3");
+        clasificacion.classList.add("card-clasificacion")
+        clasificacion.textContent =  "Clasificacion: " + pelicula.clasificacion;
+
+    //7. agregamos genero
+        let genero = document.createElement("h3");
+        genero.classList.add("card-genero")
+        genero.textContent =  "Genero: " + pelicula.genero;
+
+    //8. agregamos duracion
+        let duracion = document.createElement("h3");
+        duracion.classList.add("card-duracion")
+        duracion.textContent =  "Duracoin: " + pelicula.duracion;
+
+    //9. agregamos idioma
+        let idioma = document.createElement("h3");
+        idioma.classList.add("card-idioma")
+        idioma.textContent =  "Idioma: " + pelicula.idioma;
+
     // empezamos ingresar hijos desde el mas itnerno
     // la targeta tiene un hijo que se el poster
     targeta.appendChild(poster);
-    targeta.appendChild(nombrePelicula);
-    // la columna tiene un hijo que sera la targeta
+    targeta.appendChild(datosPelicula);
+ 
+    // la columna tiene un hijo que sera la targeta"
     columna.appendChild(targeta);
     // el div el cual llammamos a javascript mediante el id fila tendra un hijo y sera la columna
     fila.appendChild(columna);
 
-    nombrePelicula.appendChild(titulo);
-    nombrePelicula.appendChild(sinopcis);
+    datosPelicula.appendChild(titulo);
+    datosPelicula.appendChild(sinopcis);
+    datosPelicula.appendChild(genero);
+    datosPelicula.appendChild(clasificacion);
+    datosPelicula.appendChild(genero);
+    datosPelicula.appendChild(idioma);
+    datosPelicula.appendChild(duracion);
+ })
+
+ 
+
+ let peliculasProximas = [
+    {
+        nombre: "Gallo de pelea",
+        fecha: "diciembre",
+        genero: "hechos reales",
+        poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/Gallo%20de%20pelea.jpg?alt=media&token=039a6fc2-14e9-4697-a0de-92253c5c7003",
+        
+    },
+    {
+        nombre: "Invitacion al infierno",
+        fecha: "octubre",
+        genero: "Terror",
+        poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/invitacion%20al%20infierno.png?alt=media&token=3f43905a-cc58-42b3-b8b0-80a18d15cf24",
+
+    },
+    {
+        nombre: "Peleando por mi vida",
+        fecha: "enero-2023",
+        genero: "hechos reales",
+        poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/peleando%20por%20mi%20vida.png?alt=media&token=c2af274d-2036-4d47-9e9d-456ecc80f7d8",
+
+    },
+    {
+        nombre: "Preso en el planeta tierra",
+        fecha: "octubre",
+        genero: "ficcion",
+        poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/preso%20en%20el%20planeta%20tierra.png?alt=media&token=e7fbd4e1-00fe-4a05-bf49-ef6892499803",
+
+    },
+    {
+        nombre: "Caseria de brujas",
+        fecha: "febrero-2023",
+        genero: "hechos reales",
+        poster: "https://firebasestorage.googleapis.com/v0/b/cineepf.appspot.com/o/caseria%20de%20brujas.png?alt=media&token=44b72fb3-a732-40cd-a5dd-36fc443c1c7f",
+    },
+]
+ let fila2 = document.getElementById("fila2");
+
+ peliculasProximas.forEach(function(peliculaProxima){
+    /* este roeech se repitira durante el numero de elementos que tenga mi arreglo de peliculas*/
+    //[console.log(pelicula)]
+    console.log(peliculaProxima.sinopcis)
+    console.log(peliculaProxima.clasificacion)
+    console.log(peliculaProxima.genero)
+    console.log(peliculaProxima.poster)
+    console.log(peliculaProxima.nombre)
+    console.log(peliculaProxima.idioma)
+
+    let columna = document.createElement("div");
+    columna.classList.add("col");/* entre las comillas se agrega el nombre de los  estilos de las clases que se quiera a gregar*/
+
+//2.creamos una targeta para cada pelicula
+    let targeta = document.createElement("div");
+    targeta.classList.add("card","h-100");
+
+//3. creamos una foto para cada pelicula 
+    let poster = document.createElement("img");
+    poster.src = peliculaProxima.poster;//se pone pelicula porque hace referencia al nombre de la funcion en el fo y no al nombre del vector
+
+//4. creamos los nombres de la peliculas
+    let datosPelicula = document.createElement("div");/* el div donde ira el nombre 
+                                                        * y la sinopcis de la pelicula*/
+    datosPelicula.classList.add("card-body");/* la clase del div*/
+
+    let titulo = document.createElement("h1");
+    titulo.classList.add('card-title');
+    titulo.textContent = peliculaProxima.nombre;
+
+    let fecha = document.createElement("h1");
+    fecha.classList.add('card_genero');
+    fecha.textContent = peliculaProxima.fecha;
+
+
+// empezamos ingresar hijos desde el mas itnerno
+// la targeta tiene un hijo que se el poster
+targeta.appendChild(poster);
+targeta.appendChild(datosPelicula);
+
+datosPelicula.appendChild(titulo);
+datosPelicula.appendChild(fecha);
+
+// la columna tiene un hijo que sera la targeta"
+columna.appendChild(targeta);
+// el div el cual llammamos a javascript mediante el id fila tendra un hijo y sera la columna
+fila2.appendChild(columna);
  })
