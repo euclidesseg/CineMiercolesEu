@@ -64,6 +64,10 @@ fila.addEventListener('click',function(evento){
     peliculaSeleccionada.duracion = (evento.target.parentElement.querySelector('h4').textContent);
    
     console.log(peliculaSeleccionada);
+
+    // llamando a la memoria del navegador
+    localStorage.setItem("peliculaseleccionada",JSON.stringify(peliculaSeleccionada)) //JAVASCRIPT OBJECT NOTATION
+
     // console.log(evento.target.parentElement.querySelector('img'));
     // console.log(evento.target.parentElement.querySelector('h1'));
     // console.log(evento.target.parentElement.querySelector('p'));
@@ -72,7 +76,7 @@ fila.addEventListener('click',function(evento){
     // console.log(evento.target.parentElement.querySelector('h5'));
     // console.log(evento.target.parentElement.querySelector('h4'));
    
-    // window.location.href = "./src/views/ampliarInfoPelicula.html"
+    window.location.href = "./src/views/ampliarInfoPelicula.html"
 })
 
 
